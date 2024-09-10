@@ -30,7 +30,7 @@ map.removeControl(map.zoomControl);
 
 // custome camera icon
 const customIcon = L.icon({
-    iconUrl: '![cam](https://github.com/user-attachments/assets/03498118-42e7-4322-ab53-150e783c2499)',
+    iconUrl: '/map/cam.png',
     iconSize: [35, 35], // Size of the icon [width, height]
     iconAnchor: [16, 16], // Point of the icon which will correspond to the marker's location
     popupAnchor: [0, -16], // Point from which the popup should open relative to the iconAnchor
