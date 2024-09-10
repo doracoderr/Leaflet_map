@@ -1,0 +1,284 @@
+*,
+:after,
+:before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body,
+html,
+#map {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    height: 100%;
+    min-height: 100%;
+
+}
+
+
+/* locate button  */
+.located-animation {
+    width: 17px;
+    height: 17px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: #2a93ee;
+    animation: border-pulse 2s infinite;
+}
+
+.locate-button.locate-active {
+    fill: rgba(9, 225, 9, 0.841);
+
+}
+
+.locate-button:not(.locate-active) {
+    fill: rgba(255, 0, 0, 0.841);
+
+}
+
+.locate-button {
+    display: flex;
+    width: 36px;
+    height: 35px;
+    z-index: 999;
+    cursor: pointer;
+    padding: 5px;
+    border: 4px;
+    border-radius: 7px;
+    padding: 3px;
+
+    background-size: contain;
+    margin: 3px;
+}
+
+.locate-button :hover {
+    background-color: #45a09a;
+}
+
+.leaflet-control-custom {
+
+    border-radius: 7px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.leaflet-control-custom i {
+    font-size: 18px;
+
+}
+
+.leaflet-control-custom a:hover {
+    background-color: #45a09a;
+
+}
+
+.leaflet-control-custom i.leaflet-control-custom-button-enabled {
+    background-color: #28ba07c9;
+
+}
+
+
+.notification-container {
+    font-size: 14px;
+    font-weight: bolder;
+    color: #ffde06;
+    background-color: #7a7070;
+    padding: 5px 10px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
+    z-index: 999;
+    display: none;
+    border-left: 4px solid rgb(255, 21, 0);
+
+}
+
+
+/* Search Bar Control Styling */
+.leaflet-control-search-bar {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-control-search-bar input[type="text"] {
+    width: 150px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 6px;
+    box-sizing: border-box;
+}
+
+.leaflet-control-search-bar button {
+    padding: 8px 12px;
+    background-color: #007bff;
+
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.leaflet-control-search-bar button:hover {
+    background-color: #0056b3;
+
+}
+
+.leaflet-control-search-bar button:active {
+    background-color: #008b2e;
+
+}
+
+
+
+/* Customize the draw tool buttons */
+.leaflet-draw-toolbar a {
+
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 3px;
+    cursor: pointer;
+    /
+}
+
+
+.leaflet-draw-toolbar a:hover {
+    background-color: #45a09a;
+
+    /* darker green on hover */
+}
+
+/* Customize active state of drawing buttons */
+.leaflet-draw-toolbar a.leaflet-draw-toolbar-button-enabled {
+    background-color: rgba(9, 225, 9, 0.841);
+    ;
+    /* orange when active */
+}
+
+
+/* Customize tool icons */
+.leaflet-draw-toolbar a .leaflet-draw-tool-icon {
+    background-position: center;
+    background-size: contain;
+}
+
+/* Specific customization of each tool */
+.leaflet-draw-draw-circle {
+    background-image: url('path/to/circle-icon.svg');
+    /* Add your custom icon */
+}
+
+.leaflet-draw-draw-rectangle {
+    background-image: url('path/to/rectangle-icon.svg');
+
+}
+
+/* Style for the distance labels */
+.distance-label {
+    display: inline-block;
+    background-color: rgba(12, 12, 12, 0.7);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: green;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+/* Circle Menu CSS */
+.circle-menu {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* background: rgba(255, 255, 255, 0.9); */
+    /* background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); */
+    display: none;
+    /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.circle-menu .icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* transition: transform 0.3s ease, background .3s; */
+}
+
+.circle-menu .icon:hover {
+background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+.icon i {
+    transition: transform 0.1s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.icon i:hover {
+    transform: scale(1.4);
+    /* Increases the icon size by 50% */
+}
+
+/* Position the icons in a circle */
+.circle-menu .icon:nth-child(1) {
+    transform: translate(0px, -80px);
+}
+
+.circle-menu .icon:nth-child(2) {
+    transform: translate(70px, -70px);
+}
+
+.circle-menu .icon:nth-child(3) {
+    transform: translate(80px, 0px);
+}
+
+.circle-menu .icon:nth-child(4) {
+    transform: translate(70px, 70px);
+}
+
+.circle-menu .icon:nth-child(5) {
+    transform: translate(0px, 80px);
+}
+
+.circle-menu .icon:nth-child(6) {
+    transform: translate(-70px, 70px);
+}
+
+.circle-menu .icon:nth-child(7) {
+    transform: translate(-80px, 0px);
+}
+
+.circle-menu .icon:nth-child(8) {
+    transform: translate(-70px, -70px);
+}
